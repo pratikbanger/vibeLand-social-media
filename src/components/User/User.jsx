@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import profilePicture from '../../img/profilePicture.jpg'
 import { useDispatch, useSelector } from 'react-redux'
-import { followUnFollowUser } from '../../actions/UserAcion';
+import { followUnFollowUser, searchUserProfile } from '../../actions/UserAcion';
 import { useNavigate } from 'react-router-dom';
 
 const User = ({ person }) => {
@@ -18,7 +18,7 @@ const User = ({ person }) => {
 
     return (
         <div className="follower">
-            <div style={{cursor: "pointer"}} onClick={()=> navigate(`/profile/${person._id}`)}>
+            <div style={{cursor: "pointer"}} onClick={()=> {navigate(`/profile/${person._id}`); dispatch(searchUserProfile(person._id))}}>
                 <img className='followerImg' src={person.profilePicture || profilePicture} alt="" />
                 <div className="name">
                     <span>{person.firstname} {person.lastname}</span>

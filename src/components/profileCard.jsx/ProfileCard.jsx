@@ -7,8 +7,6 @@ import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import ProfileModal from '../ProfileModal/ProfileModal'
 import { logoutUser } from '../../actions/AuthAction'
-import { useEffect } from 'react'
-import { searchUserProfile } from '../../actions/UserAcion'
 
 const ProfileCard = ({ location }) => {
 
@@ -29,16 +27,6 @@ const ProfileCard = ({ location }) => {
     navigate('/login')
     dispatch(logoutUser())
   }
-
-
-
-  useEffect(() => {
-
-    if (paramsId !== user._id && location === "profilePage") {
-      dispatch(searchUserProfile(paramsId))
-    }
-
-  }, [])
 
   return (
     <div className="ProfileCard">

@@ -3,7 +3,7 @@ import './FollowersCard.css'
 import User from '../User/User'
 import profilePicture from '../../img/profilePicture.jpg'
 import loadingSpinner from '../../img/loading.gif'
-import { followUnFollowUser } from '../../actions/UserAcion';
+import { followUnFollowUser, searchUserProfile } from '../../actions/UserAcion';
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchNewUser } from '../../actions/UserAcion'
 import { searchUserAPI } from '../../Api/UserRequest'
@@ -67,7 +67,7 @@ const FollowersCard = () => {
                         ? <img src={loadingSpinner} style={{ alignSelf: "center", margin: "3rem 0" }} className='loadingSpinner' alt="Loading..." />
                         : findUser.success &&
                         <div className="follower">
-                            <div style={{ cursor: "pointer" }} onClick={() => navigate(`/profile/${findUser.user[0]._id}`)}>
+                            <div style={{ cursor: "pointer" }} onClick={()=> {navigate(`/profile/${findUser.user[0]._id}`); dispatch(searchUserProfile(findUser.user[0]._id))}}>
                                 <img className='followerImg' src={findUser.user[0].profilePicture || profilePicture} alt="" />
                                 <div className="name">
                                     <span>{findUser.user[0].firstname} {findUser.user[0].lastname}</span>

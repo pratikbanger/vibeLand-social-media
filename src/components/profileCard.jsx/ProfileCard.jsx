@@ -21,8 +21,8 @@ const ProfileCard = ({ location }) => {
 
   const handleLogout = (e) => {
     // e.preventDefault();
-    // navigate('/login')
-    // dispatch(logoutUser())
+    navigate('/login')
+    dispatch(logoutUser())
     console.log(currentLocation)
   }
 

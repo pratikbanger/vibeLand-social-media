@@ -67,7 +67,7 @@ const FollowersCard = () => {
                         ? <img src={loadingSpinner} style={{ alignSelf: "center", margin: "3rem 0" }} className='loadingSpinner' alt="Loading..." />
                         : findUser.success &&
                         <div className="follower">
-                            <div style={{cursor: "pointer"}} onClick={()=> navigate(`/profile/${findUser.user[0]._id}`)}>
+                            <div style={{ cursor: "pointer" }} onClick={() => navigate(`/profile/${findUser.user[0]._id}`)}>
                                 <img className='followerImg' src={findUser.user[0].profilePicture || profilePicture} alt="" />
                                 <div className="name">
                                     <span>{findUser.user[0].firstname} {findUser.user[0].lastname}</span>
@@ -89,16 +89,13 @@ const FollowersCard = () => {
 
                     {fetchUserLoading
                         ? <img src={loadingSpinner} style={{ alignSelf: "center", margin: "5rem 0" }} className='loadingSpinner' alt="Loading..." />
-                        : <>
-                            {/* eslint-disable-next-line */}
-                            {newUserData.map((follower, id) => {
-                                if (follower._id !== user._id) {
-                                    return (
-                                        <User person={follower} key={id} />
-                                    )
-                                }
-                            })}
-                        </>
+                        : newUserData.map((follower, id) => {
+                            if (follower._id !== user._id) {
+                                return (
+                                    <User person={follower} key={id} />
+                                )
+                            }
+                        })
                     }
                 </>
             }

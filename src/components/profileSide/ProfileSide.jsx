@@ -5,7 +5,7 @@ import ProfileCard from '../profileCard.jsx/ProfileCard'
 const ProfileSide = () => {
     return (
         <div className="ProfileSide">
-            <ProfileCard location="/home" />
+            <ProfileCard location="homePage" />
         </div>
     )
 }

@@ -1,6 +1,6 @@
 
 
-const authReducer = (state = { authData: null, newUserData: [], loading: false, updateLoading: false, fetchUserLoading: false, followLoading: false, error: false }, action) => {
+const authReducer = (state = { authData: null, newUserData: [], searchUserData: [], searchUserLoading: false, loading: false, updateLoading: false, fetchUserLoading: false, followLoading: false, error: false }, action) => {
     switch (action.type) {
         case "AUTH_START":
             return { ...state, loading: true, error: false }
@@ -38,6 +38,18 @@ const authReducer = (state = { authData: null, newUserData: [], loading: false, 
 
         case "FETCHING_NEW_USER_FAILED":
             return { ...state, error: true, fetchUserLoading: false }
+
+
+
+        // Search user
+        case "SEARCHING_USER_START":
+            return { ...state, searchUserLoading: true, error: false }
+
+        case "SEARCHING_USER_SUCCESS":
+            return { ...state, searchUserData: action.data, searchUserLoading: false, error: false }
+
+        case "SEARCHING_USER_FAILED":
+            return { ...state, error: true, searchUserLoading: false }
 
 
 

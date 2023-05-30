@@ -19,11 +19,13 @@ const InfoCard = () => {
     const { user } = useSelector((state) => state.authReducer.authData)
 
     useEffect(() => {
-        
+
         const fetchProfileUser = async () => {
-            if (paramsId !== user._id) {
-                const { data } = await getProfileUser(paramsId)
-                setProfileUser(data.otherDetails)
+            if (paramsId) {
+                if (paramsId !== user._id) {
+                    const { data } = await getProfileUser(paramsId)
+                    setProfileUser(data.otherDetails)
+                }
             }
             else {
                 setProfileUser(user)
@@ -31,7 +33,7 @@ const InfoCard = () => {
         }
         fetchProfileUser()
         // eslint-disable-next-line
-    }, [])
+    }, [paramsId])
 
     const handleLogout = (e) => {
         e.preventDefault();

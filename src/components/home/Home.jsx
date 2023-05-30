@@ -1,6 +1,6 @@
 import React from 'react'
 import './Home.css'
-import ProfileSide from '../profileSide/ProfileSide'
+import ProfileCard from '../profileCard.jsx/ProfileCard'
 import NavigationBar from '../NavigationBar/NavigationBar'
 import PostSide from '../PostSide/PostSide'
 
@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <div className='Home'>
             <div className='mobileDevice'>
-                <ProfileSide />
+                <ProfileCard location="homePage" />
             </div>
             <div>
                 <NavigationBar />

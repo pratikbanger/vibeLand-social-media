@@ -1,4 +1,4 @@
-import { followUnFollowUserAPI, getAllUserAPI, updateUserAPI } from "../Api/UserRequest"
+import { followUnFollowUserAPI, getAllUserAPI, getProfileUser, updateUserAPI } from "../Api/UserRequest"
 
 export const updateUserDetail = (userId, formData) => async (dispatch) => {
     dispatch({ type: "UPDATING_START" })
@@ -8,6 +8,17 @@ export const updateUserDetail = (userId, formData) => async (dispatch) => {
     } catch (error) {
         dispatch({ type: "UPDATING_FAILED" })
         console.log(error)
+    }
+}
+
+export const searchUserProfile = (userId) => async (dispatch) => {
+    dispatch({ type: "SEARCHING_USER_START" })
+    try {
+        const { data } = await getProfileUser(userId)
+        dispatch({ type: "SEARCHING_USER_SUCCESS", data: data.otherDetails })
+    } catch (error) {
+        console.log(error)
+        dispatch({ type: "SEARCHING_USER_FAILED" })
     }
 }
 

@@ -6,11 +6,12 @@ import loadingSpinner from '../../img/loading.gif'
 import { useDispatch, useSelector } from 'react-redux'
 import { login } from '../../actions/AuthAction'
 import { loginSchema } from '../../Schemas/validationSchema';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const LogIn = () => {
 
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const loading = useSelector((state) => state.authReducer.loading)
 
     return (
@@ -29,6 +30,7 @@ const LogIn = () => {
                     validationSchema={loginSchema}
                     onSubmit={(values) => {
                         dispatch(login(values))
+                        navigate('/')
                     }}
                     errors={(errors) => {
                         console.log(errors)

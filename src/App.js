@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import LogIn from './components/Authentication/LogIn';
+import SignUp from './components/Authentication/SignUp';
+import Profile from './components/Profile/Profile';
+import Home from './components/home/Home';
+import { useSelector } from 'react-redux';
+import Search from './components/Search/Search';
 
 function App() {
+
+  const user = useSelector((state) => state.authReducer.authData)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <div className="blur" style={{ top: "-18%", right: "0" }}></div>
+        <div className="blur" style={{ top: "36%", left: "-8rem" }}></div>
+        <Routes>
+          <Route path='/' element={user ? <Home /> : <LogIn />} />
+          <Route path='/home' element={user ? <Home /> : <LogIn />} />
+          <Route path='/login' element={user ? <Home /> : <LogIn />} />
+          <Route path='/signup' element={user ? <Home /> : <SignUp />} />
+          <Route path='/profile/:id' element={user ? <Profile /> : <LogIn />} />
+          <Route path='/search' element={user ? <Search /> : <LogIn />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

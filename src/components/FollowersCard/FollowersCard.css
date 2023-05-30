@@ -1,0 +1,100 @@
+.FollowersCard {
+    width: 90%;
+    border-radius: 1.7rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    background: var(--cardColor);
+    padding: 1.5rem;
+}
+
+.searchFormDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.searchFormDiv>input {
+    background-color: var(--inputColor);
+    border-radius: 10px;
+    font-size: 17px;
+    width: 100%;
+    padding: 10px;
+    padding-left: 2.5rem;
+    border: none;
+    outline: none;
+}
+
+.searchFormDiv>i {
+    font-size: 1rem;
+    position: absolute;
+    left: 0.8rem;
+}
+
+.searchFormDiv>button {
+    width: 5rem;
+    height: 2.2rem;
+    margin-left: 1rem;
+}
+
+.follower {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.follower>div {
+    display: flex;
+    gap: 10px;
+}
+
+.followerImg {
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.name>span:nth-of-type(1) {
+    font-weight: bold;
+}
+
+.fc-button {
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.3rem;
+}
+
+.unfollow-button {
+    color: var(--gray);
+    border: 2px solid var(--gray);
+    background: transparent;
+}
+
+.noUserFound {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+@media (max-width: 769px) {
+
+    .follower>div {
+        margin: 10px 0px;
+    }
+
+    .followerImg {
+        margin-right: 10px;
+    }
+}

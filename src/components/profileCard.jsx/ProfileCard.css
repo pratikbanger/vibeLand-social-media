@@ -1,0 +1,171 @@
+.ProfileCard {
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 1rem;
+    overflow-x: clip;
+    background: var(--cardColor);
+}
+
+.ProfileImages {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ProfileImages>img:nth-of-type(1) {
+    width: 100%;
+    max-height: 25rem;
+    object-fit: cover;
+}
+
+.ProfileImages>img:nth-of-type(2) {
+    width: 6rem;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -3rem;
+    box-shadow: var(--profileShadow);
+}
+
+.ProfileName {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+    gap: 5px;
+}
+
+.ProfileName>span:nth-of-type(1) {
+    font-weight: bold;
+}
+
+.ProfileName>span:nth-of-type(2) {
+    color: var(--gray);
+    font-size: 13px;
+}
+
+/* Follow Status */
+.followStatus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.followStatus>hr {
+    width: 85%;
+    border: 1px solid var(--hrColor);
+    margin: 10px 0px;
+}
+
+.followStatus>div:nth-of-type(1) {
+    display: flex;
+    gap: 1rem;
+    width: 80%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.follow {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.follow>span:nth-of-type(1) {
+    font-weight: bold;
+}
+
+.follow>span:nth-of-type(2) {
+    color: var(--gray);
+    font-size: 15px;
+}
+
+.vl {
+    height: 120%;
+    border-left: 5px solid var(--hrColor);
+}
+
+.ProfileCard>a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #1f9cfc;
+    align-self: center;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.profileButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.editProfileButton {
+    width: 7rem;
+    margin: 0px 5px;
+    height: 2rem;
+    margin-bottom: 1rem;
+    align-self: center;
+}
+
+.logout {
+    background: var(--location);
+}
+
+.displayNone {
+    display: none;
+}
+
+@media (max-width: 599px) {
+
+    .ProfileCard {
+        margin-bottom: 10px;
+    }
+
+    .followStatus>div:nth-of-type(2) {
+        display: flex;
+        gap: 1rem;
+        width: 80%;
+        justify-content: space-around;
+        /* justify-content: space-between; */
+        align-items: center;
+    }
+
+    .displayNone {
+        display: block;
+    }
+
+    .follow>span:nth-of-type(1) {
+        font-weight: bold;
+        font-size: 12px;
+    }
+    
+    .follow>span:nth-of-type(2) {
+        color: var(--gray);
+        font-size: 10px;
+        align-self: center;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+
+    .displayNone {
+        display: block;
+    }
+
+    .followStatus>div:nth-of-type(2) {
+        display: flex;
+        gap: 1rem;
+        width: 80%;
+        justify-content: space-around;
+        align-items: center;
+    }
+}

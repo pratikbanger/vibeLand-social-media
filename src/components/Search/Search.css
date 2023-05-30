@@ -1,0 +1,32 @@
+.Search {
+    position: relative;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 20rem 40rem;
+    gap: 1rem;
+    height: 100vh;
+}
+
+/* Media Queries */
+
+@media (max-width: 767px) {
+
+    .mobileDevice {
+        display: none;
+    }
+
+    .Search {
+        grid-template-columns: auto;
+    }
+
+    .followersCardDiv {
+        width: 80vw;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .Search {
+        grid-template-columns: 18rem 25rem;
+    }
+}

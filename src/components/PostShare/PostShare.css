@@ -1,0 +1,79 @@
+.PostShare {
+    display: flex;
+    gap: 1rem;
+    background-color: var(--cardColor);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.PostShare>img {
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+}
+
+.PostShare>div {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    gap: 1rem;
+}
+
+.PostShare>div>form>input {
+    background-color: var(--inputColor);
+    border-radius: 10px;
+    width: 90%;
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 17px;
+    border: none;
+    outline: none;
+}
+
+.moreOption {
+    display: flex;
+    justify-content: space-between;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.ps-buttons {
+    padding: 5px 20px;
+    margin-top: 5px;
+}
+
+.previewImage {
+    position: relative;
+}
+
+.previewImage>svg {
+    position: absolute;
+    background-color: var(--orange);
+    border-radius: 0.3rem;
+    right: 1rem;
+    top: 1rem;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.previewImage>svg:hover {
+    padding: 0px;
+    color: var(--orange);
+    background: transparent;
+    border: 2px solid var(--orange);
+}
+
+.previewImage>img {
+    width: 100%;
+    max-height: 30rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}

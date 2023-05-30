@@ -1,0 +1,50 @@
+.navIcons {
+    margin: 1rem 0rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cardColor);
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+}
+
+.navIcons>img, .navIcons>a>img {
+    /* width: 1.5rem;
+    height: 1.5rem; */
+    width: 2rem;
+    height: 2rem;
+}
+
+.navIcons>a>img{
+    color: orange;
+}
+
+.vibeLandLogo {
+    width: 10rem;
+}
+
+.font-size {
+    font-size: 2em;
+}
+
+@media (max-width: 599px) {
+    .vibeLandLogo {
+        width: 5.5rem;
+    }
+
+    .font-size {
+        font-size: 1.5em;
+    }
+    
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+    .vibeLandLogo {
+        width: 7rem;
+    }
+
+    .font-size {
+        font-size: 1.5em;
+    }
+    
+}

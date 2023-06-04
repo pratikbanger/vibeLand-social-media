@@ -4,6 +4,7 @@ import LogIn from './components/Authentication/LogIn';
 import SignUp from './components/Authentication/SignUp';
 import Profile from './components/Profile/Profile';
 import Home from './components/home/Home';
+import Followers from './components/Followers/Followers';
 import { useSelector } from 'react-redux';
 import Search from './components/Search/Search';
 
@@ -23,6 +24,8 @@ function App() {
           <Route path='/signup' element={user ? <Home /> : <SignUp />} />
           <Route path='/profile/:id' element={user ? <Profile /> : <LogIn />} />
           <Route path='/search' element={user ? <Search /> : <LogIn />} />
+          <Route path='/profile/followers/:id' element={user ? <Followers /> : <LogIn />} />
+          {/* <Route path='/profile/following/:id' element={user ? <Following /> : <LogIn />} /> */}
         </Routes>
       </div>
     </Router>

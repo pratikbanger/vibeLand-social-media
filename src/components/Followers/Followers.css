@@ -1,0 +1,42 @@
+.Followers {
+    position: relative;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 20rem 40rem;
+    gap: 1rem;
+}
+
+.followersList {
+    width: 90%;
+    border-radius: 1.7rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    background: var(--cardColor);
+    padding: 1.5rem;
+}
+
+.mobileDevice {
+    margin-top: 5rem;
+}
+
+/* Media Queries */
+
+@media (max-width: 767px) {
+
+    .mobileDevice {
+        display: none;
+    }
+
+    .Followers {
+        grid-template-columns: auto;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .Followers {
+        grid-template-columns: 18rem 25rem;
+    }
+}

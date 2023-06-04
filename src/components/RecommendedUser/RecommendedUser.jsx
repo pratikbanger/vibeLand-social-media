@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './FollowersCard.css'
+import './RecommendedUser.css'
 import User from '../User/User'
 import profilePicture from '../../img/profilePicture.jpg'
 import loadingSpinner from '../../img/loading.gif'
@@ -41,7 +41,7 @@ const FollowersCard = () => {
     useEffect(() => {
         dispatch(fetchNewUser())
         // eslint-disable-next-line
-    }, [])
+    }, [user])
 
     return (
         <div className="FollowersCard">

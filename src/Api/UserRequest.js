@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({ baseURL: "https://vibe-land-server.onrender.com" })
-// const API2 = axios.create({ baseURL: "http://localhost:5000" })
+// const API = axios.create({ baseURL: "http://localhost:5000" })
 
 API.interceptors.request.use((req) => {
     if (localStorage.getItem('profile')) {
@@ -16,3 +16,4 @@ export const updateUserAPI = (userId, formData) => API.put(`/user/updateuser/${u
 export const getAllUserAPI = () => API.get(`/user/fetchalluser/`)
 export const searchUserAPI = (username) => API.get(`/user/searchuser/${username}`)
 export const followUnFollowUserAPI = (userId, myId) => API.put(`/user/follow/${userId}`, { _id: myId })
+export const followUserListAPI = (userId) => API.get(`/user/followerslist/${userId}`)

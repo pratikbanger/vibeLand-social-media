@@ -2,7 +2,7 @@ import React from 'react'
 import './Search.css'
 import ProfileCard from '../profileCard.jsx/ProfileCard'
 import NavigationBar from '../NavigationBar/NavigationBar'
-import FollowersCard from '../FollowersCard/FollowersCard'
+import RecommendedUser from '../RecommendedUser/RecommendedUser'
 
 const Search = () => {
     return (
@@ -13,7 +13,7 @@ const Search = () => {
             <div>
                 <NavigationBar />
                 <div className='followersCardDiv'>
-                    <FollowersCard />
+                    <RecommendedUser />
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 
 
-const authReducer = (state = { authData: null, newUserData: [], searchUserData: [], searchUserLoading: false, loading: false, updateLoading: false, fetchUserLoading: false, followLoading: false, error: false }, action) => {
+const authReducer = (state = { authData: null, newUserData: [], searchUserData: [], followUserList: [], followUserListLoading: false, searchUserLoading: false, loading: false, updateLoading: false, fetchUserLoading: false, followLoading: false, error: false }, action) => {
     switch (action.type) {
         case "AUTH_START":
             return { ...state, loading: true, error: false }
@@ -38,6 +38,18 @@ const authReducer = (state = { authData: null, newUserData: [], searchUserData: 
 
         case "FETCHING_NEW_USER_FAILED":
             return { ...state, error: true, fetchUserLoading: false }
+
+
+
+        // Follow user list
+        case "FOLLOW_USER_LIST_START":
+            return { ...state, followUserListLoading: true, error: false }
+
+        case "FOLLOW_USER_LIST_SUCCESS":
+            return { ...state, followUserList: action.data, followUserListLoading: false, error: false }
+
+        case "FOLLOW_USER_LIST_FAILED":
+            return { ...state, error: true, followUserListLoading: false }
 
 
 

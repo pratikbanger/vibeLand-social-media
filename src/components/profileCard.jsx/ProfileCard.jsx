@@ -7,7 +7,7 @@ import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import ProfileModal from '../ProfileModal/ProfileModal'
 import { logoutUser } from '../../actions/AuthAction'
-import { followUserList } from '../../actions/UserAcion'
+import { followUserList, followingUserList } from '../../actions/UserAcion'
 
 const ProfileCard = ({ location }) => {
 
@@ -24,8 +24,18 @@ const ProfileCard = ({ location }) => {
 
   const handleFollowersList = () => {
 
-    dispatch(followUserList(paramsId))
-    navigate(`/profile/followers/${paramsId}`)
+    if (location === "profilePage") {
+      dispatch(followUserList(paramsId))
+      navigate(`/profile/followers/${paramsId}`)
+    }
+  }
+
+  const handleFollowingList = () => {
+
+    if (location === "profilePage") {
+      dispatch(followingUserList(paramsId))
+      navigate(`/profile/following/${paramsId}`)
+    }
   }
 
   const handleLogout = (e) => {
@@ -54,14 +64,14 @@ const ProfileCard = ({ location }) => {
           <div className="followStatus">
             <hr />
             <div>
-              <div style={{cursor: "pointer"}} onClick={handleFollowersList} className="follow">
+              <div style={{ cursor: "pointer" }} onClick={handleFollowersList} className="follow">
                 <span>Followers</span>
                 <span>{paramsId !== user._id && location === "profilePage" ? searchUserData.followers.length : user.followers.length}</span>
               </div>
 
               {/* <div className="vl"></div> */}
 
-              <div style={{cursor: "pointer"}} onClick={() => navigate(`/profile/following/${user._id}`)} className="follow">
+              <div style={{ cursor: "pointer" }} onClick={handleFollowingList} className="follow">
                 <span>Following</span>
                 <span>{paramsId !== user._id && location === "profilePage" ? searchUserData.following.length : user.following.length}</span>
               </div>

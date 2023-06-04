@@ -5,12 +5,13 @@
 }
 
 .timelineLoading {
-    width: 5rem;
+    width: 3rem;
     margin-top: 2rem;
     align-self: center;
 }
 
 .loadingDiv {
+    /* width: 50%; */
     display: flex;
     justify-content: center;
     align-items: center;

@@ -25,7 +25,7 @@ function App() {
           <Route path='/profile/:id' element={user ? <Profile /> : <LogIn />} />
           <Route path='/search' element={user ? <Search /> : <LogIn />} />
           <Route path='/profile/followers/:id' element={user ? <Followers /> : <LogIn />} />
-          {/* <Route path='/profile/following/:id' element={user ? <Following /> : <LogIn />} /> */}
+          <Route path='/profile/following/:id' element={user ? <Followers /> : <LogIn />} />
         </Routes>
       </div>
     </Router>

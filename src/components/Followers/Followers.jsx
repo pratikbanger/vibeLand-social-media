@@ -9,6 +9,7 @@ import FollowUserList from '../FollowUserList/FollowUserList'
 const Followers = () => {
 
     const { followUserList, followUserListLoading } = useSelector((state) => state.authReducer)
+    const { followLoading } = useSelector((state) => state.authReducer)
 
     return (
         <div className='Followers'>
@@ -19,8 +20,10 @@ const Followers = () => {
                 <NavigationBar />
 
                 <div className="followersList">
-                    {followUserListLoading
-                        ? <img src={loadingSpinner} style={{ alignSelf: "center", margin: "3rem 0" }} className='loadingSpinner' alt="Loading..." />
+                    {followUserListLoading || followLoading
+                        ? <div className='loadingDiv'>
+                            <img className='timelineLoading' src={loadingSpinner} alt="Loading post" />
+                        </div>
                         : followUserList.map((userId) => {
                             return (
                                 <FollowUserList userId={userId} key={userId._id} />

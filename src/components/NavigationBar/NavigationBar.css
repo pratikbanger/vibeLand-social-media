@@ -1,10 +1,12 @@
 .navIcons {
     margin: 1rem 0rem;
+    min-width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: var(--cardColor);
-    padding: 1rem 3rem;
+    /* padding: 1rem 3rem; */
+    padding: 1rem;
     border-radius: 1rem;
 }
 
@@ -27,7 +29,8 @@
     font-size: 2em;
 }
 
-@media (max-width: 599px) {
+@media (max-width: 599px) {    
+
     .vibeLandLogo {
         width: 5.5rem;
     }
@@ -39,6 +42,7 @@
 }
 
 @media (min-width: 600px) and (max-width: 1024px) {
+    
     .vibeLandLogo {
         width: 7rem;
     }

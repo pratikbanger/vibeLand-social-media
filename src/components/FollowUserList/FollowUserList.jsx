@@ -28,7 +28,9 @@ const FollowUserList = ({ userId }) => {
                     <span>@{userId.username}</span>
                 </div>
             </div>
-            <button className={following ? 'button fc-button unfollow-button' : 'button fc-button'} onClick={handleFollowUser}>{following ? "Unfollow" : "Follow"}</button>
+            {user._id !== userId._id &&
+                <button className={following ? 'button fc-button unfollow-button' : 'button fc-button'} onClick={handleFollowUser}>{following ? "Unfollow" : "Follow"}</button>
+            }
         </div>
     )
 }

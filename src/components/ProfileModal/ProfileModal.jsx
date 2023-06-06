@@ -22,7 +22,7 @@ function ProfileModal({ modalOpen, setModalOpen, data }) {
 
     const dispatch = useDispatch()
     const params = useParams()
-    
+
     // eslint-disable-next-line
     const [opened, { close }] = useDisclosure(false);
 
@@ -39,18 +39,18 @@ function ProfileModal({ modalOpen, setModalOpen, data }) {
     return (
         <>
             <Modal opened={modalOpen} onClose={() => close(setModalOpen(false))} title="Update Profile Information" centered size='auto'>
-                <form action="" className="infoForm authForm">
+                <form className="infoForm authForm profileModal">
 
                     <div>
                         <input
-                            className='infoInput'
+                            className='infoInput modalInput'
                             type="text"
                             placeholder='First Name' name='firstname'
                             value={formData.firstname || ""}
                             onChange={handleInputChange}
                         />
                         <input
-                            className='infoInput'
+                            className='infoInput modalInput'
                             type="text"
                             placeholder='Last Name'
                             name='lastname'
@@ -61,7 +61,7 @@ function ProfileModal({ modalOpen, setModalOpen, data }) {
 
                     <div>
                         <input
-                            className='infoInput'
+                            className='infoInput modalInput'
                             type="text"
                             placeholder='Works At'
                             name='worksAt'
@@ -70,7 +70,7 @@ function ProfileModal({ modalOpen, setModalOpen, data }) {
                         />
 
                         <input
-                            className='infoInput'
+                            className='infoInput modalInput'
                             type="text"
                             placeholder='Relationship Status'
                             name='relationship'
@@ -81,7 +81,7 @@ function ProfileModal({ modalOpen, setModalOpen, data }) {
 
                     <div>
                         <input
-                            className='infoInput'
+                            className='infoInput modalInput'
                             type="text"
                             placeholder='City'
                             name='city'
@@ -89,7 +89,7 @@ function ProfileModal({ modalOpen, setModalOpen, data }) {
                             onChange={handleInputChange}
                         />
                         <input
-                            className='infoInput'
+                            className='infoInput modalInput'
                             type="text"
                             placeholder='Country'
                             name='country'
@@ -99,43 +99,47 @@ function ProfileModal({ modalOpen, setModalOpen, data }) {
 
                     </div>
 
-                    <div>
-                        Profile Image
-                        <input
-                            className='infoInput'
-                            type="file"
-                            name='profilePicture'
-                            onChange={(e) => {
-                                const image64 = new FileReader();
-                                if (e.target.files && e.target.files[0]) {
-                                    image64.readAsDataURL(e.target.files[0])
-                                    image64.onload = () => {
-                                        setFormData({ ...formData, [e.target.name]: image64.result })
+                    <div className='imageInput'>
+                        <div className="flex">
+                            <h5>Profile Image</h5>
+                            <input
+                                className='infoInput modalInput'
+                                type="file"
+                                name='profilePicture'
+                                onChange={(e) => {
+                                    const image64 = new FileReader();
+                                    if (e.target.files && e.target.files[0]) {
+                                        image64.readAsDataURL(e.target.files[0])
+                                        image64.onload = () => {
+                                            setFormData({ ...formData, [e.target.name]: image64.result })
+                                        }
+                                        image64.onerror = (err) => {
+                                            console.log(err)
+                                        }
                                     }
-                                    image64.onerror = (err) => {
-                                        console.log(err)
+                                }}
+                            />
+                        </div>
+                        <div className="flex">
+                            <h5>Cover Image</h5>
+                            <input
+                                className='infoInput modalInput'
+                                type="file"
+                                name='coverPicture'
+                                onChange={(e) => {
+                                    const image64 = new FileReader();
+                                    if (e.target.files && e.target.files[0]) {
+                                        image64.readAsDataURL(e.target.files[0])
+                                        image64.onload = () => {
+                                            setFormData({ ...formData, [e.target.name]: image64.result })
+                                        }
+                                        image64.onerror = (err) => {
+                                            console.log(err)
+                                        }
                                     }
-                                }
-                            }}
-                        />
-                        Cover Image
-                        <input
-                            className='infoInput'
-                            type="file"
-                            name='coverPicture'
-                            onChange={(e) => {
-                                const image64 = new FileReader();
-                                if (e.target.files && e.target.files[0]) {
-                                    image64.readAsDataURL(e.target.files[0])
-                                    image64.onload = () => {
-                                        setFormData({ ...formData, [e.target.name]: image64.result })
-                                    }
-                                    image64.onerror = (err) => {
-                                        console.log(err)
-                                    }
-                                }
-                            }}
-                        />
+                                }}
+                            />
+                        </div>
 
                     </div>
 

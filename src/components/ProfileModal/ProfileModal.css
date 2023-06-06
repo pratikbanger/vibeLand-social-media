@@ -5,3 +5,64 @@
     padding: 1rem 0;
     margin-top: 1rem;
 }
+
+.profileModal {
+    padding: 0;
+    margin: 0;
+}
+
+.mantine-xiucpp {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.flex>h5 {
+    margin-top: 1rem;
+}
+
+/* Media Queries */
+
+@media (max-width: 599px) {
+
+    .profileModal {
+        max-width: 85vw;
+    }
+
+    .modalInput {
+        padding: 10px;
+        margin-top: 1rem;
+    }
+
+    .flex>h5 {
+        font-size: 10px;
+    }
+
+    .profileModal>div {
+        gap: 0;
+    }
+
+    .profileModal>div>input:nth-of-type(1) {
+        margin-right: 15px;
+    }
+
+    .imageInput {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+
+    .profileModal {
+        max-width: 70vw;
+    }
+
+    .modalInput {
+        width: 80%;
+    }
+
+}

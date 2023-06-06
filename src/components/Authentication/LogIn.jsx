@@ -69,7 +69,7 @@ const LogIn = () => {
                                 <span style={{ fontSize: "13px" }}>Don't have an account. <Link to="/signup">SignUp</Link> here!</span>
 
                                 {!loading
-                                    ? <button className="button signup-button" type="submit">Sign Up</button>
+                                    ? <button className="button signup-button" type="submit">Login Up</button>
                                     : <img className='loadingSpinner' src={loadingSpinner} alt="loading..." />
                                 }
 

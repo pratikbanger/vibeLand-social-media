@@ -24,15 +24,56 @@
     cursor: pointer;
 }
 
+/* Post Options */
+.fa-ellipsis-vertical {
+    font-size: 1.3rem;
+    margin-top: 5px;
+}
+
+.moreOptions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.optionLabel {
+    padding: 4px 16px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-item>svg{
+    margin-right: 1rem;;
+}
+
+.dropdown-toggle::after {
+    border-top: 0;
+}
+
+@media (hover: hover) {
+    .mantine-g7194:hover {
+        background-color: transparent;
+        color: black;
+    }
+}
+
 @media (max-width: 599px) {
     .Post {
         margin: 0.5rem 0;
     }
-    
-    .Post>img, .postReact, .Post>span, .details {
+
+    .Post>img,
+    .postReact,
+    .Post>span,
+    .details {
         margin: 0.2rem 0;
     }
-    
+
     .postReact>img {
         margin: 0rem 0.5rem;
     }

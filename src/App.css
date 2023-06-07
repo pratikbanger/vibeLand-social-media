@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
 :root {
   --yellow: #f5c32c;
   --orange: #1f9cfc;
@@ -12,6 +15,15 @@
   --video: #4A4EB7;
   --location: #EF5757;
   --schedule: #E1AE4A;
+}
+
+* {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
 }
 
 .App {

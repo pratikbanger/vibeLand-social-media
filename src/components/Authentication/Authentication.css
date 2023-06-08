@@ -82,6 +82,17 @@
     .a-left>img {
         width: 20rem;
     }
+
+    .signUpPage {
+        width: 95vw;
+    }
+
+    .signupInput {
+        padding: 10px;
+        font-size: 12px;
+        width: 5rem;
+        margin: 5px 5px;
+    }
 }
 
 @media (min-width: 601px) and (max-width: 768px) {

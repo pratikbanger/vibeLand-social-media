@@ -19,7 +19,7 @@ const SignUp = () => {
                 <img src={vibeLandLogo} alt="Vibe Land Logo" />
             </div>
 
-            <div className="a-right">
+            <div className="a-right signUpPage">
 
                 <Formik
                     initialValues={{
@@ -44,14 +44,14 @@ const SignUp = () => {
 
                             <div>
                                 <Field
-                                    className='infoInput'
+                                    className='infoInput signupInput'
                                     type="text"
                                     placeholder='First Name'
                                     name='firstname'
                                     onBlur={handleBlur}
                                 />
                                 <Field
-                                    className='infoInput'
+                                    className='infoInput signupInput'
                                     type="text"
                                     placeholder='Last Name'
                                     name='lastname'
@@ -63,7 +63,7 @@ const SignUp = () => {
 
                             <div>
                                 <Field
-                                    className='infoInput'
+                                    className='infoInput signupInput'
                                     type="text"
                                     placeholder='@username'
                                     name='username'
@@ -74,14 +74,14 @@ const SignUp = () => {
 
                             <div>
                                 <Field
-                                    className='infoInput'
+                                    className='infoInput signupInput'
                                     type="password"
                                     placeholder='Password'
                                     name='password'
                                     onBlur={handleBlur}
                                 />
                                 <Field
-                                    className='infoInput'
+                                    className='infoInput signupInput'
                                     type="password"
                                     placeholder='Confirm Password'
                                     name='confirmpassword'

@@ -1,19 +1,22 @@
 import React from 'react'
 import { deletePostAPI } from '../../Api/PostRequest'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchMyPost } from '../../actions/PostAction'
 
 const DeleteModal = ({ postId }) => {
 
-    
-  const { user } = useSelector((store) => store.authReducer.authData)
+
+    const { user } = useSelector((store) => store.authReducer.authData)
+    const dispatch = useDispatch();
 
     const handleDeletePost = () => {
 
         deletePostAPI(postId._id, user._id)
+        dispatch(fetchMyPost(user._id))
     }
 
     return (
-        <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered">
                 <div className="modal-content">
                     <div className="modal-header">

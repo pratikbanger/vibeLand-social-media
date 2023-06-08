@@ -56,13 +56,13 @@ const PostShare = () => {
         <div className="PostShare">
             <img src={user.profilePicture === null ? profilePicture : user.profilePicture} alt="" />
             <div>
-                <form>
+                <form onSubmit={handleSharePost}>
                     <input
                         type="text"
                         placeholder="What's on your mind"
                         ref={descRef}
                         required
-                        min={2}
+                        minLength={2}
                     />
                     <div className="postOptions">
                         <div className="moreOption">
@@ -72,7 +72,7 @@ const PostShare = () => {
                             </div>
 
                             {!loading
-                                ? <button type="submit" className="button ps-buttons" onClick={handleSharePost}>Share</button>
+                                ? <button type="submit" className="button ps-buttons" >Share</button>
                                 : <img className='loadingSpinner' src={loadingSpinner} alt="loading..." />
                             }
                         </div>

@@ -5,6 +5,7 @@ import loadingSpinner from '../../img/loading.gif'
 import profilePicture from '../../img/profilePicture.jpg'
 import { useDispatch, useSelector } from 'react-redux'
 import { createNewPost } from '../../actions/PostAction'
+import { fetchMyPost } from '../../actions/PostAction'
 
 const PostShare = () => {
 
@@ -50,6 +51,9 @@ const PostShare = () => {
         setImg(null)
         setImage(null)
         descRef.current.value = ""
+        setTimeout(() => {
+            dispatch(fetchMyPost(user._id))
+        }, 1000);
     }
 
     return (

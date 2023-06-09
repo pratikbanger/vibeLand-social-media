@@ -12,7 +12,9 @@ const DeleteModal = ({ postId }) => {
     const handleDeletePost = () => {
 
         deletePostAPI(postId._id, user._id)
-        dispatch(fetchMyPost(user._id))
+        setTimeout(() => {
+            dispatch(fetchMyPost(user._id))
+        }, 1000);
     }
 
     return (

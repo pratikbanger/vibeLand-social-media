@@ -8,9 +8,12 @@ import Share from '../../img/share.png'
 import { useSelector } from 'react-redux'
 import { likePost } from '../../Api/TimelinePostsRequest'
 import DeleteModal from '../DeleteModal/DeleteModal';
+import { useLocation } from 'react-router-dom';
+import EditPostModal from '../EditPostModal/EditPostModal';
 
 const Post = ({ data }) => {
 
+    const location = useLocation().pathname;
     const { user } = useSelector((state) => state.authReducer.authData)
 
     const [liked, setLiked] = useState(data.likes.includes(user._id))
@@ -32,20 +35,21 @@ const Post = ({ data }) => {
                     <img src={Comment} alt="" />
                     <img src={Share} alt="" />
                 </div>
+                {location === `/profile/${user._id}` &&
+                    <div>
+                        <div className="nav-item dropdown">
+                            <i style={{ cursor: "pointer" }} className="fa-solid fa-ellipsis-vertical nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
 
-                <div>
-                    <div className="nav-item dropdown">
-                        <i style={{ cursor: "pointer" }} className="fa-solid fa-ellipsis-vertical nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
-
-                        <ul className="dropdown-menu">
-                            <label className="optionLabel">Post Options</label>
-                            <li><hr className="dropdown-divider" /></li>
-                            <li><button className="dropdown-item"><IconEdit size={16} /> Edit Post</button></li>
-                            <li><button type="button" className="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal"><IconTrash size={16} /> Delete Post</button></li>
-                        </ul>
-                        <DeleteModal postId={data} />
-                    </div>
-                </div>
+                            <ul className="dropdown-menu">
+                                <label className="optionLabel">Post Options</label>
+                                <li><hr className="dropdown-divider" /></li>
+                                <li><button type="button" className="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal1"><IconEdit size={16} /> Edit Post</button></li>
+                                <li><button type="button" className="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal"><IconTrash size={16} /> Delete Post</button></li>
+                            </ul>
+                            <DeleteModal postId={data} />
+                            <EditPostModal postData={data} />
+                        </div>
+                    </div>}
             </div>
 
             <span style={{ color: 'var(--gray)', fontSize: '14px' }} >{likesCount} Likes</span>

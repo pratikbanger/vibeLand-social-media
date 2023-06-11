@@ -24,6 +24,8 @@
 
 .ProfileImages>img:nth-of-type(2) {
     width: 6rem;
+    height: 6rem;
+    object-fit: cover;
     border-radius: 50%;
     position: absolute;
     bottom: -3rem;
